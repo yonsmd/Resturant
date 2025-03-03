@@ -152,3 +152,111 @@
     border-radius: 0 25px 25px 0;
     z-index: 2;
   }
+  /* Loading Animation */
+.loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-color);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.5s;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 3px solid var(--primary-color);
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loader-wrapper.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+/* Scrollable Filter Buttons with Hidden Scrollbar */
+.scroll-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+  
+}
+
+.scroll-container::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+.d-flex.flex-nowrap {
+  width: 100%;
+  justify-content: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  gap: 10px;
+}
+
+.filter-btn {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+/* Navbar Toggler Icon */
+.navbar-toggler {
+  border: none !important;
+  padding: 0.5rem;
+}
+
+.navbar-toggler-icon {
+  background-image: none !important;
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after,
+.navbar-toggler-icon span {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: var(--bg-color); /* Adapts to theme */
+  left: 0;
+  transition: all 0.3s;
+}
+
+.navbar-toggler-icon::before {
+  top: 0;
+}
+
+.navbar-toggler-icon::after {
+  bottom: 0;
+}
+
+.navbar-toggler-icon span {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Animate on Click */
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+  transform: rotate(45deg);
+  top: 50%;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+  transform: rotate(-45deg);
+  bottom: 50%;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon span {
+  opacity: 0;
+}
