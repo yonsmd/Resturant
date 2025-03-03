@@ -63,3 +63,7 @@ themeToggle.addEventListener('click', () => {
     localStorage.setItem('theme', 'dark');
   }
 });
+// Hide loader when page loads
+window.addEventListener('load', () => {
+  document.querySelector('.loader-wrapper').classList.add('hidden');
+});
