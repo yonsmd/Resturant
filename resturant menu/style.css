@@ -1,0 +1,154 @@
+:root {
+    /* Light Theme (Default) */
+    --primary-color: #4A2E1B;       /* Dark Coffee Brown */
+    --secondary-color: #8B5E3C;     /* Medium Brown */
+    --accent-color: #604b2a;        /* Warm Gold (for accents) */
+    --bg-color: #FFF9F0;            /* Soft Cream Background */
+    --text-color: #2D1F0F;          /* Dark Brown Text */
+    --card-bg: #FFFFFF;             /* White Cards */
+  }
+  
+  [data-theme="dark"] {
+    /* Dark Theme */
+    --primary-color: #D4A96A;       /* Warm Gold (for accents) */
+    --secondary-color: #8B5E3C;     /* Medium Brown */
+    --accent-color: #ce804b;        /* Dark Coffee Brown */
+    --bg-color: #1A120B;            /* Deep Dark Background */
+    --text-color: #FFF9F0;          /* Soft Cream Text */
+    --card-bg: #2D2012;             /* Dark Cards */
+  }
+  
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+  
+  
+  .navbar {
+    background-color: var(--primary-color) !important;
+  }
+  
+  .card {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+  }
+  .btn-outline-secondary {
+    border-color: var(--secondary-color);
+    color: var(--secondary-color);
+  }
+  
+  .btn-outline-secondary:hover {
+    background-color: var(--secondary-color);
+    color: var(--bg-color);
+  }
+  body {
+    font-family: 'Poppins', sans-serif;
+    padding-top: 70px; /* Offset for fixed navbar */
+  }
+  
+  /* Navbar Hover Effect */
+  .navbar-nav .nav-link {
+    transition: all 0.3s;
+  }
+  .navbar-nav .nav-link:hover {
+    color: var(--secondary-color) !important;
+    transform: translateY(-2px);
+  }
+  
+  /* Custom Card Styling */
+  .card {
+    border: none;
+    transition: transform 0.3s;
+  }
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  }
+  
+  .price {
+    color: var(--accent-color);
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
+  
+  /* Carousel Image Height */
+  .carousel {
+    margin-left: 15px;
+    margin-right: 15px; /* Fixed space for small screens */
+  }
+  .carousel-item img {
+    height: 500px;
+    object-fit: cover;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .carousel-item img {
+      height: 300px;
+    }
+    .carousel {
+        margin-left: 30px;
+        margin-right: 30px; /* Larger space on bigger screens */
+      }
+  }
+  /* Scroll Animation */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+  }
+  
+  .scroll-animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .menu-card {
+    border-radius: 15px;
+    overflow: hidden;
+    border: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    background: var(--card-bg);
+  }
+  
+  /* Hover Effect */
+  .menu-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+  }
+  
+  /* Image Styling */
+  .card-img-top {
+    height: 250px;
+    object-fit: cover;
+    border-bottom: 3px solid var(--primary-color);
+  }
+  
+  /* Price Styling */
+  .price {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+  }
+  
+  /* Title Styling */
+  .card-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+  }
+  
+  /* "Best Seller" Badge */
+  .best-seller {
+    position: absolute;
+    top: 15px;
+    left: -5px;
+    background: var(--accent-color);
+    color: var(--bg-color);
+    padding: 6px 20px;
+    font-size: 0.9rem;
+    border-radius: 0 25px 25px 0;
+    z-index: 2;
+  }
