@@ -260,3 +260,6 @@
 .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon span {
   opacity: 0;
 }
+.carouselll{
+  border-radius: 12px;
+}
